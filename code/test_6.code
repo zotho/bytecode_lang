@@ -1,0 +1,50 @@
+LOAD_VAL 10
+WRITE_VAR ‘channel’
+LOAD_VAL 2
+WRITE_VAR ‘x’
+
+READ_VAR ‘channel’
+READ_VAR ‘x’
+SEND_CHANNEL  # blocking send
+
+READ_VAR ‘channel’
+RECV_CHANNEL  # blocking recv
+WRITE_VAR ‘y’
+
+
+
+LOAD_ADDRESS
+LOAD_VAL 13
+ADD
+WRITE_VAR ‘a’
+
+LOAD_ADDRESS
+LOAD_VAL 22
+ADD
+WRITE_VAR ‘b’
+
+READ_VAR ‘a’
+READ_VAR ‘b’
+SPAWN  # spawn concurrent tasks
+
+
+
+
+
+
+
+
+
+READ_VAR ‘z’
+RETURN_VALUE
+
+
+
+LOAD_ADDRESS
+WRITE_VAR ‘b’
+
+LOAD_VAL 3
+WRITE_VAR ‘z’
+
+LOAD_VAL 0
+RETURN_VALUE

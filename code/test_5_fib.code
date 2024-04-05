@@ -1,0 +1,47 @@
+                        # n = N
+LOAD_VAL 8
+WRITE_VAR ‘n’
+
+                        # i = 0
+LOAD_VAL 0
+WRITE_VAR ‘i’
+                        # x = 1
+LOAD_VAL 1
+WRITE_VAR ‘x’
+                        # y = 1
+LOAD_VAL 1
+WRITE_VAR ‘y’
+                        # t = x
+READ_VAR ‘x’
+WRITE_VAR ‘t’
+
+                        # label a
+LOAD_ADDRESS
+WRITE_VAR ‘a’
+
+                        # t = y
+READ_VAR ‘y’
+WRITE_VAR ‘t’
+                        # y = x + y
+READ_VAR ‘x’
+READ_VAR ‘y’
+ADD
+WRITE_VAR ‘y’
+                        # x = t
+READ_VAR ‘t’
+WRITE_VAR ‘x’
+                        # i = i + 1
+READ_VAR ‘i’
+LOAD_VAL 1
+ADD
+WRITE_VAR ‘i’
+
+                        # if i < n goto a
+READ_VAR ‘i’
+READ_VAR ‘n’
+LT
+IF_JUMP ‘a’
+
+                        # return x
+READ_VAR ‘x’
+RETURN_VALUE

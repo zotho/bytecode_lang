@@ -1,0 +1,23 @@
+                            # x = 1
+LOAD_VAL 1
+WRITE_VAR ‘x’
+
+                            # label a
+LOAD_ADDRESS
+WRITE_VAR ‘a’
+
+                            # x = x + 1
+READ_VAR ‘x’
+LOAD_VAL 1
+ADD
+WRITE_VAR ‘x’
+
+                            # if x < 10 goto a
+READ_VAR ‘x’
+LOAD_VAL 10
+LT
+IF_JUMP ‘a’
+
+                            # return x
+READ_VAR ‘x’
+RETURN_VALUE
